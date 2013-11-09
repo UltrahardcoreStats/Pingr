@@ -1,0 +1,24 @@
+name: Pingr
+version: 1.0
+main: com.ttaylorr.uhc.pingr.PingrPlugin
+
+permissions:
+    pingr.*:
+        description: Allows you to send and recieve pings
+        default: op
+        children:
+            pingr.send: true
+            pingr.recieve: true
+    pingr.send:
+        description: Allows you to send pings
+        default: op
+    pingr.recieve:
+        description: Allows you to recieve pings
+        default: not op
+
+commands:
+    ping:
+        description: Send a ping to another player
+        aliases: [poke, pingr]
+        permission: pingr.send
+        usage: Type /pingr &lt;player&gt; to send a ping to that player.
